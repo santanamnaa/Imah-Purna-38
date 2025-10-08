@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasi Timbel Mamah - Nikmatnya Merah Menggugah Selera</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables & Global Styles --- */
+        :root {
+            --red: #C62828;          /* Warna Merah Cabai Dominan */
+            --dark-brown: #4E342E;   /* Warna Cokelat Teks/Aksen */
+            --light-cream: #FFF3E0;  /* Warna Krem Latar Belakang */
+            --dark-text: var(--dark-brown);
+            --light-text: #757575;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-cream);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--red);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* --- Hero Section with Parallax --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./public/hero-bg.png') no-repeat center center/cover;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--red);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+        }
+
+        .btn-cta:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.5);
+        }
+
+        /* --- Poster Frame Section --- */
+        .poster-frame {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .poster-frame-container {
+            display: flex;
+            justify-content: center;
+        }
+        .frame {
+            padding: 15px;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+        .frame img {
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+
+
+        /* --- Tentang Section --- */
+        #tentang .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #tentang .text-content {
+            flex: 1;
+        }
+
+        #tentang .text-content h3 {
+            font-size: 1.8rem;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+        #tentang .text-content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+
+        #tentang .img-content {
+            flex: 1;
+        }
+
+        #tentang .img-content img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- Sambal Section --- */
+        #sambal {
+            background-color: #fff;
+        }
+        
+        #sambal .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #sambal .img-content {
+            flex: 1;
+        }
+
+        #sambal .img-content img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        #sambal .text-content {
+            flex: 1;
+        }
+
+        #sambal .text-content h3 {
+            font-size: 1.8rem;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+        #sambal .text-content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+
+        /* --- ISI Section --- */
+        #isi {
+            background-color: var(--light-cream);
+        }
+        
+        #isi .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #isi .img-content {
+            flex: 1;
+        }
+
+        #isi .img-content img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        #isi .text-content {
+            flex: 1;
+        }
+
+        #isi .text-content h2 {
+            color: var(--red);
+            margin-bottom: 30px;
+        }
+
+        #isi .text-content h3 {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin: 20px 0 10px 0;
+        }
+
+        #isi .text-content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .gallery-content {
+            margin-top: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Video Gallery Section --- */
+        .video-gallery {
+            background-color: #fff;
+        }
+        .video-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .video-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .video-item video {
+            width: 100%;
+            display: block;
+        }
+
+
+        /* --- Testimoni Section --- */
+        #testimoni .testimoni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimoni-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--red);
+        }
+
+        .testimoni-card p {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .testimoni-card .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .testimoni-card .customer-name {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        /* --- Video Testimoni by Mang Epul --- */
+        .video-testimoni {
+            background-color: var(--light-cream);
+            text-align: center;
+        }
+        .video-testimoni-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .video-testimoni-container video {
+            width: 100%;
+            display: block;
+        }
+        .video-testimoni h3 {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+
+        /* --- Pemesanan Section --- */
+        #pemesanan {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #pemesanan .contact-info {
+            margin-bottom: 40px;
+        }
+
+        #pemesanan .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        #pemesanan .contact-info a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #pemesanan .contact-info a:hover {
+            color: var(--dark-brown);
+        }
+
+        #pemesanan .delivery-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        #pemesanan .delivery-icons a {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        #pemesanan .delivery-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        #pemesanan .delivery-icons img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--red);
+            color: var(--light-cream);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+
+            #tentang .content-wrapper,
+            #sambal .content-wrapper {
+                flex-direction: column;
+            }
+
+            #tentang .text-content,
+            #tentang .img-content,
+            #sambal .text-content,
+            #sambal .img-content {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- =================== HERO SECTION =================== -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Nikmatnya Menggugah Selera di Setiap Sajian Mamah</h1>
+            <p>Rasakan ledakan rasa pedas dan gurih dari masakan racikan Mamah. Siap memanjakan lidah Anda dengan cita rasa yang berani dan tak terlupakan.</p>
+            <a href="#pemesanan" class="btn-cta">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <main>
+        
+
+        <!-- =================== TENTANG SECTION =================== -->
+        <section id="tentang">
+            <div class="container">
+                <h2>Kisah Dibalik Rasa Merah Membara</h2>
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <h3>Lebih dari Sekadar Pedas</h3>
+                        <p>Dimulai dari hasrat Mamah untuk menciptakan masakan dengan karakter kuat, Nasi Timbel Mamah kini identik dengan sajian berwarna merah menggoda. Setiap hidangan adalah perjalanan rasa yang berani.</p>
+                        <p>Filosofi kami: kelezatan sejati terletak pada keseimbangan rempah. Kami menggunakan pilihan cabai terbaik, bumbu rahasia, dan teknik memasak yang membuat warna merah meresap sempurna dan cita rasanya nendang.</p>
+                        <p>Kemerahan bukan hanya warna, tapi adalah janji akan rasa yang kaya, gurih, dan pedas yang akan membuat Anda ketagihan sejak suapan pertama.</p>
+                    </div>
+                    <div class="img-content">
+                        <img src="./public/poster.JPG" alt="Bumbu merah khas Mamah Teti">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== SAMBAL SECTION =================== -->
+        <section id="sambal">
+            <div class="container">
+                <h2>Jiwa Kami 
+                    Sambal Terasi Merah</h2>
+                <div class="content-wrapper">
+                    <div class="img-content">
+                        <img src="./public/sambal.png" alt="Sambal dan ulekan">
+                    </div>
+                    <div class="text-content">
+                        <h3>Pedasnya Menggigit, Gurihnya Menggoda</h3>
+                        <p>Tak lengkap rasanya menikmati hidangan tanpa sambal khas Mamah. Inilah bintang utama yang selalu dinantikan.</p>
+                        <p>Dihancurkan kasar di atas ulekan, sambal merah kami adalah paduan sempurna dari cabai rawit merah, cabai merah besar, terasi pilihan, bawang, dan sejumpat gula. Rasanya? Pedas yang meledak di mulut, namun diimbangi dengan gurih yang bikin nagih.</p>
+                        <p>Sambal ini adalah jiwa dari setiap sajian, sentuhan akhir yang membuat semua hidangan menjadi luar biasa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== ISI SECTION =================== -->
+        <section id="isi">
+            <div class="container">
+                <h2>Nasi Timbel Mamah</h2>
+                <div class="text-content">
+                    <p>Nasi Timbel Mamah menghadirkan kehangatan masakan rumahan Sunda dengan sambal terasi pedas segar, ikan goreng renyah, dan lalapan wangi daun pisang yang menambah nikmat setiap suapan.</p>
+                    
+                    <p>Tersedia di Imah Purna 38. Setiap piring bukan sekadar makanan, tapi kisah cinta seorang Mamah yang ingin anak-anaknya pulang makan tepat waktu.</p>
+                    
+                    <h3>Kenapa Harus Nasi Timbel Mamah?</h3>
+                    
+                    <p>Kami menyediakan tiga varian sambal legendaris, dari sambal ijo hingga leunca pedas yang bikin nagih. Lauk lengkap dengan ayam goreng, ikan gurame, tempe, tahu, dan lalapan segar. Nasi hangat dibungkus daun pisang yang wangi dan lembut, autentik seperti di kampung halaman. Semua masakan dibuat langsung oleh Mamah dengan penuh rasa, bukan sekadar resep.</p>
+                    
+                    <h3>Rasakan Hangatnya, Bawa Pulang Rindunya</h3>
+                    
+                    <p>Datang langsung ke Imah Purna 38, atau pesan lewat WhatsApp dengan kalimat: "Mamah, saya mau timbelnya satu, sambal pedas ya!"</p>
+                    
+                    <p>Dari ulekan Mamah, lahir rasa yang gak pernah bohong. Pedasnya bikin kangen, rasanya bikin balik lagi. Nasi Timbel Mamah — Hangatnya Rumah di Setiap Suapan.</p>
+                </div>
+                
+                <div class="gallery-content">
+                    <div class="gallery-grid">
+                        <img src="./public/galeri/2021-09-12.webp" alt="Nasi Timbel Mamah">
+                        <img src="./public/galeri/2021-09-12 (1).webp" alt="Nasi Timbel Mamah">
+                        <img src="./public/galeri/2021-09-12 (2).webp" alt="Nasi Timbel Mamah">
+                        <img src="./public/galeri/2021-09-12 (3).webp" alt="Nasi Timbel Mamah">
+                        <img src="./public/galeri/2021-09-12 (4).webp" alt="Nasi Timbel Mamah">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== VIDEO GALLERY SECTION =================== -->
+        <section class="video-gallery">
+            <div class="container">
+                <h2>Gigitan Pertama, Langsung Ketagihan</h2>
+                <div class="video-gallery-grid">
+                    <div class="video-item">
+                        <video width="100%" controls>
+                            <source src="./public/vid1.MP4" type="video/mp4">
+                            Browser Anda tidak mendukung elemen video.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video width="100%" controls>
+                            <source src="./public/vid2.MP4" type="video/mp4">
+                            Browser Anda tidak mendukung elemen video.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video width="100%" controls>
+                            <source src="./public/vid3.MP4" type="video/mp4">
+                            Browser Anda tidak mendukung elemen video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== TESTIMONI SECTION =================== -->
+        <section id="testimoni">
+            <div class="container">
+                <h2>Apa Kata Mereka?</h2>
+                <div class="testimoni-grid">
+                    <div class="testimoni-card">
+                        <p>"Sumpah, sambalnya paling top! Pedasnya pas, gurihnya nendang. Ayam bakarnya juga bumbu merahnya meresap sampai ke tulang. Recommended banget buat yang suka pedas!"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Budi Santoso, Depok</p>
+                    </div>
+                    <div class="testimoni-card">
+                        <p>"Rasanya itu luar biasa, berani banget! Kemasannya rapi dan makanannya masih panas. Buat yang cari makanan dengan cita rasa kuat dan pedas, wajib coba Nasi Timbel Mamah."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Anisa Putri, Tangerang</p>
+                    </div>
+                    <div class="testimoni-card">
+                        <p>"Saya emang penggemar pedas sejati, tapi ini level lain! Bumbu merahnya mantap, ikan gorengnya renyah banget. Nasi timbelnya wangi daun pisangnya bikin kangen kampung halaman."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Andi Kurniawan, Bandung</p>
+                    </div>
+                    <div class="testimoni-card">
+                        <p>"Baru sekali cobain langsung jatuh cinta. Sambal terasinya endes, bikin nafsu makan naik terus. Porsi lauknya juga banyak, worth it banget!"</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Rina Marlina, Jakarta</p>
+                    </div>
+                    <div class="testimoni-card">
+                        <p>"Ini nasi timbel paling enak yang pernah saya makan! Bumbu merahnya meresap banget, ikan guramenya segar, dan lalapannya bikin makin nikmat. Pokoknya wajib jadi langganan."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Joko Susanto, Bogor</p>
+                    </div>
+                    <div class="testimoni-card">
+                        <p>"Saya pesan lewat aplikasi, datengnya cepet banget. Nasi masih hangat, sambalnya mantap, apalagi ikan gorengnya renyah dan gurih. Pelayanannya juga ramah banget."</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="customer-name">- Siti Rahayu, Bekasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== VIDEO TESTIMONI BY MANG EPUL =================== -->
+        <section class="video-testimoni">
+            <div class="container">
+                <h2>Kesan dari Sang Legenda</h2>
+                <h3>Testimoni Langsung dari Mang Epul</h3>
+                <div class="video-testimoni-container">
+                    <video width="100%" height="100%" controls>
+                        <source src="./public/vidtestimoni.MP4" type="video/mp4">
+                        Browser Anda tidak mendukung elemen video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PEMESANAN SECTION =================== -->
+        <section id="pemesanan">
+            <div class="container">
+                <h2>Pesan Kelezatan Merah Mamah Sekarang</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Alamat:</strong> Jl. Purnawarman No.38, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117</p>
+                    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/6285211115743?text=Halo%20Mamah,%20saya%20ingin%20pesan%20yang%20pedasnya%20nendang!" target="_blank">+62 852‑1111‑5743</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================== FOOTER =================== -->
+    <footer>
+        <p>Dari dapur sederhana, hadir kelezatan yang selalu bikin rindu.</p>
+    </footer>
+
+
+
+</body>
+</html>
