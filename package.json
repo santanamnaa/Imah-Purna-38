@@ -1,0 +1,16 @@
+{
+  "name": "nasitimbelmamah",
+  "version": "1.0.0",
+  "description": "Imah Purna 38 - Nikmatnya Merah Menggugah Selera",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "keywords": ["food", "indonesian", "nasi", "timbel"],
+  "author": "Imah Purna 38",
+  "license": "ISC"
+}
